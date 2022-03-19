@@ -156,7 +156,7 @@ class ConversationRelPreprocessor():
         context = [tokenizer.encode(c) for c in context]
 
         # input_ids = [101, utterance1 ids, 102, utterance2 ids, 102, ・・・, 102]
-        input_ids = [101] + [id for c in context for id in c[1:]]
+        input_ids = [101] + [id for c in context for id in c[3:]]
         turn_type_ids = [1 for _ in range(len(input_ids))]
         attn_mask = [1 for _ in range(len(input_ids))]
 
